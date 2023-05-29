@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 :root {
     /* Layout */
     /* The designs were created to the following widths:
@@ -14,12 +15,27 @@
     --neutral-white: hsl(0, 0%, 100%);
     /* Typography */
     /* Body Copy */
-    --font-title: 3.8em;
+    --font-title: 6.8em;
+    /* --font-title: 4.6em; */
     --font-paragraph: 1.6em;
+    --font-label: 1.2em;
     /* Font */
     /* --font-Family: [Roboto](https: //fonts.google.com/specimen/Roboto) */
-    --base-font: Roboto;
+    --font-primary: 'Roboto', sans-serif;
+    /* --base-font: Roboto; */
     /* - Weights: 400, 700 */
+    /* spacings */
+    --spacing-168: 16.8rem;
+    --spacing-128: 12.8rem;
+    --spacing-68: 6.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;
+    --spacing-8: 0.8rem;
+    --spacing-percentage-90: 90%;
 }
 
 *,
@@ -31,15 +47,110 @@
 }
 
 html {
-    font-family: var(--base-font);
+    font-family: var(--font-primary);
     color: var(--neutral-dark-slate-grey);
-    font-size: 62, 5%;
+    font-size: 62.5%;
 }
 
 p {
     font-size: var(--font-paragraph);
 }
 
-h1 {
+.info-form__fact--svg {
+    margin-right: var(--spacing-8);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--neutral-charcoal-grey);
+    height: 100vh;
+    min-width: 100%;
+}
+
+.container {
+    display: flex;
+    align-self: center;
+    background-color: var(--neutral-white);
+    border: 2px solid var(--neutral-white);
+    border-radius: 2%;
+    height: 70vh;
+    align-items: center;
+    padding: var(--spacing-12);
+    gap: var(--spacing-68);
+}
+
+.info-form {
+    display: flex;
+    flex-direction: column;
+    height: var(--spacing-percentage-90);
+    width: 50%;
+    gap: var(--spacing-20);
+}
+
+.info-form__title {
+    padding: var(--spacing-36) var(--spacing-20) 0;
     font-size: var(--font-title);
+    font-weight: 700;
+}
+
+.info-form__subtitle {
+    font-size: var(--font-paragraph);
+    padding: 0 var(--spacing-20);
+}
+
+.info-form__fact {
+    font-size: var(--font-paragraph);
+    padding: 0 var(--spacing-20);
+}
+
+.info-form__form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--spacing-20);
+    gap: var(--spacing-8);
+}
+
+.info-form__form--labels {
+    display: flex;
+    margin-top: var(--spacing-12);
+    justify-content: space-between;
+    max-width: var(--spacing-percentage-90);
+}
+
+.info-form__form--labels-email {
+    font-size: var(--font-label);
+    font-weight: 700;
+}
+
+.info-form__form--labels-error {
+    font-size: var(--font-label);
+    font-weight: 700;
+    color: var(--primary-tomato);
+    display: none;
+}
+
+.info-form__form--text-input {
+    font-size: var(--font-paragraph);
+    max-width: var(--spacing-percentage-90);
+    border: 1px solid var(--neutral-grey);
+    border-radius: 10px;
+    padding: var(--spacing-12);
+}
+
+.info-form__form--submit-button {
+    margin-top: var(--spacing-12);
+    padding: var(--spacing-12);
+    font-size: var(--font-paragraph);
+    font-weight: 700;
+    max-width: var(--spacing-percentage-90);
+    background-color: var(--neutral-dark-slate-grey);
+    color: var(--neutral-white);
+    border: 1px solid var(--neutral-grey);
+    border-radius: 10px;
+}
+
+.svg-aside {
+    padding: var(--spacing-20);
+    margin-right: var(--spacing-8);
 }

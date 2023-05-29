@@ -19,14 +19,16 @@
         <section class="info-form">
             <h1 class="info-form__title">Stay updated!</h1>
 
-            <p class="info-form__subtitle">Join 60,000+ product managers receiving monthly updates on:</p>
-            <p class="info-form__fact">Product discovery and building what matters</p>
-            <p class="info-form__fact">Measuring to ensure updates are a success</p>
-            <p class="info-form__fact">And much more!</p>
+            <p class="info-form__subtitle"> Join 60,000+ product managers receiving monthly updates on:</p>
+            <p class="info-form__fact"> <svg class="info-form__fact--svg" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155"/><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg>                Product discovery and building what matters</p>
+            <p class="info-form__fact"> <svg class="info-form__fact--svg" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155"/><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg>                Measuring to ensure updates are a success</p>
+            <p class="info-form__fact"><svg class="info-form__fact--svg" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155"/><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg>                And much more!</p>
 
             <form class="info-form__form" action="">
-                <label class="info-form__form--email-label" for="email">Email address</label>
-                <label class="info-form__form--error-label" for="error"></label>
+                <section class="info-form__form--labels">
+                    <label class="info-form__form--labels-email" for="email">Email address</label>
+                    <label class="info-form__form--labels-error" for="error"> Valid email required</label>
+                </section>
                 <input class="info-form__form--text-input" type="text" name="email" id="email" placeholder="email@company.com">
                 <input class="info-form__form--submit-button" type="submit" value="Subscribe to monthly newsletter">
             </form>
