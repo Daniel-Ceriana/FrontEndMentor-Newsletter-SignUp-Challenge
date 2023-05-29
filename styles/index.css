@@ -1,0 +1,45 @@
+:root {
+    /* Layout */
+    /* The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px */
+    /* Colors */
+    /* Primary */
+    --primary-tomato: hsl(4, 100%, 67%);
+    /* ### Neutral */
+    --neutral-dark-slate-grey: hsl(234, 29%, 20%);
+    --neutral-charcoal-grey: hsl(235, 18%, 26%);
+    --neutral-grey: hsl(231, 7%, 60%);
+    --neutral-white: hsl(0, 0%, 100%);
+    /* Typography */
+    /* Body Copy */
+    --font-title: 3.8em;
+    --font-paragraph: 1.6em;
+    /* Font */
+    /* --font-Family: [Roboto](https: //fonts.google.com/specimen/Roboto) */
+    --base-font: Roboto;
+    /* - Weights: 400, 700 */
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--base-font);
+    color: var(--neutral-dark-slate-grey);
+    font-size: 62, 5%;
+}
+
+p {
+    font-size: var(--font-paragraph);
+}
+
+h1 {
+    font-size: var(--font-title);
+}
