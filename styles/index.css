@@ -16,8 +16,11 @@
     /* Typography */
     /* Body Copy */
     --font-title: 6.8em;
+    --font-modal-title: 4.6em;
+    --font-title-mobile: 3.6em;
     /* --font-title: 4.6em; */
     --font-paragraph: 1.6em;
+    --font-paragraph-mobile: 1.6em;
     --font-label: 1.2em;
     /* Font */
     /* --font-Family: [Roboto](https: //fonts.google.com/specimen/Roboto) */
@@ -25,6 +28,7 @@
     /* --base-font: Roboto; */
     /* - Weights: 400, 700 */
     /* spacings */
+    --spacing-300: 30rem;
     --spacing-168: 16.8rem;
     --spacing-128: 12.8rem;
     --spacing-68: 6.8rem;
@@ -56,6 +60,10 @@ p {
     font-size: var(--font-paragraph);
 }
 
+svg {
+    max-width: 100%;
+}
+
 .info-form__fact--svg {
     margin-right: var(--spacing-8);
 }
@@ -64,8 +72,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--neutral-charcoal-grey);
-    height: 100vh;
-    min-width: 100%;
+    /* height: 100vh; */
+    /* min-width: 100%; */
 }
 
 .container {
@@ -73,19 +81,37 @@ body {
     align-self: center;
     background-color: var(--neutral-white);
     border: 2px solid var(--neutral-white);
-    border-radius: 2%;
-    height: 70vh;
+    border-radius: 24px;
+    /* height: 70vh; */
     align-items: center;
     padding: var(--spacing-12);
     gap: var(--spacing-68);
+    max-width: 100vw;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        border-radius: 0px;
+        gap: var(--spacing-36);
+    }
 }
 
 .info-form {
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
-    height: var(--spacing-percentage-90);
-    width: 50%;
+    /* height: var(--spacing-percentage-90); */
+    /* width: 50%; */
     gap: var(--spacing-20);
+    padding-left: var(--spacing-24);
+}
+
+@media screen and (max-width: 900px) {
+    .info-form {
+        order: 1;
+        align-self: self-end;
+    }
 }
 
 .info-form__title {
@@ -94,14 +120,35 @@ body {
     font-weight: 700;
 }
 
+@media screen and (max-width: 900px) {
+    .info-form__title {
+        font-size: var(--font-title-mobile);
+        padding: 0;
+    }
+}
+
 .info-form__subtitle {
     font-size: var(--font-paragraph);
     padding: 0 var(--spacing-20);
 }
 
+@media screen and (max-width: 900px) {
+    .info-form__subtitle {
+        font-size: var(--font-paragraph-mobile);
+        padding: 0;
+    }
+}
+
 .info-form__fact {
-    font-size: var(--font-paragraph);
+    /* font-size: var(--font-paragraph); */
     padding: 0 var(--spacing-20);
+}
+
+@media screen and (max-width: 900px) {
+    .info-form__fact {
+        font-size: var(--font-paragraph-mobile);
+        padding: 0;
+    }
 }
 
 .info-form__form {
@@ -109,6 +156,12 @@ body {
     flex-direction: column;
     padding: 0 var(--spacing-20);
     gap: var(--spacing-8);
+}
+
+@media screen and (max-width: 900px) {
+    .info-form__form {
+        padding: 0;
+    }
 }
 
 .info-form__form--labels {
@@ -135,22 +188,156 @@ body {
     max-width: var(--spacing-percentage-90);
     border: 1px solid var(--neutral-grey);
     border-radius: 10px;
-    padding: var(--spacing-12);
+    padding: var(--spacing-20);
 }
 
-.info-form__form--submit-button {
+.info-form__form--text-input:hover {
+    cursor: pointer;
+}
+
+.submit-button {
     margin-top: var(--spacing-12);
-    padding: var(--spacing-12);
+    padding: var(--spacing-20);
     font-size: var(--font-paragraph);
     font-weight: 700;
     max-width: var(--spacing-percentage-90);
+    min-width: var(--spacing-300);
     background-color: var(--neutral-dark-slate-grey);
     color: var(--neutral-white);
     border: 1px solid var(--neutral-grey);
     border-radius: 10px;
+    /* -webkit-transition: background-image 0.25s ease-in-out;
+    transition: background-image .25s; */
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    /* background-color: var(--primary-tomato);  */
+    background-image: linear-gradient(to right, red, var(--primary-tomato));
+}
+
+@media screen and (max-width: 900px) {
+    .submit-button {
+        font-size: var(--font-paragraph-mobile);
+        /* max-width: var(--spacing-percentage-90); */
+        min-width: 220px;
+    }
+    .info-form__form--text-input {
+        font-size: var(--font-paragraph-mobile);
+    }
 }
 
 .svg-aside {
-    padding: var(--spacing-20);
+    /* padding: var(--spacing-20); */
     margin-right: var(--spacing-8);
+}
+
+.desktop-svg {
+    display: block;
+}
+
+.mobile-svg {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .desktop-svg {
+        display: none;
+    }
+    .mobile-svg {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    p {
+        font-size: var(--font-paragraph-mobile1);
+    }
+}
+
+
+/* adsdasdasd */
+
+
+/* Ventana modal (agregar lista de tarea) */
+
+.bg-modal {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    z-index: 101;
+    /* left: 0;
+    top: 0; */
+    width: 100%;
+    height: 100%;
+    /* overflow: auto; */
+    background-color: var(--neutral-dark-slate-grey);
+    /* backdrop-filter: blur(10px); */
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    /* width: 97%; */
+    max-width: 400px;
+    /* margin: 12px 0; */
+    padding: 90px 24px 40px 24px;
+    /* border-radius: 12px; */
+    background: var(--neutral-white);
+    -webkit-animation-name: fadein;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+
+.modal-email {
+    font-weight: 700;
+}
+
+.modal {
+    /* margin: 30px 0; */
+    padding: 100px 50px 50px 50px;
+    border-radius: 24px;
+}
+
+.modal>h2 {
+    padding: 0 0 0 0px;
+    font-size: var(--font-modal-title);
+}
+
+.modal>p {
+    justify-self: flex-start;
+    font-size: var(--font-paragraph);
+}
+
+.modal>input {
+    align-self: center;
+}
+
+@media screen and (max-width: 900px) {
+    .modal {
+        /* margin: 30px 0; */
+        max-width: 340px;
+        padding: 100px 50px 50px 50px;
+        border-radius: 24px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .modal {
+        max-width: 250px;
+    }
+    .modal>h2 {
+        padding: 0 0 0 0px;
+        font-size: 3em;
+    }
+    .modal>p {
+        font-size: 1em;
+    }
+    .modal>input {
+        font-size: 1em;
+    }
 }
