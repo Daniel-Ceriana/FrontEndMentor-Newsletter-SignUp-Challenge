@@ -387,3 +387,12 @@ body {
         font-size: 1em;
     }
 }
+
+.attribution {
+    font-size: var(--font-paragraph);
+    color: var(--neutral-white);
+}
+
+.attribution>a {
+    color: var(--neutral-grey);
+}
