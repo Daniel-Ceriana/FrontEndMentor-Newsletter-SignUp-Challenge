@@ -68,6 +68,13 @@ svg {
     margin-right: var(--spacing-8);
 }
 
+ul,
+li {
+    list-style-type: none;
+    /* text-decoration: none;
+    text-decoration-style: none; */
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -139,12 +146,29 @@ body {
     }
 }
 
-.info-form__fact {
-    /* font-size: var(--font-paragraph); */
+.info-form__list--item {
+    display: flex;
+    align-items: center;
+}
+
+.info-form__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
     padding: 0 var(--spacing-20);
 }
 
+.info-form__fact--svg {}
+
+.info-form__fact {
+    font-size: var(--font-paragraph);
+    /* padding: 0 var(--spacing-20); */
+}
+
 @media screen and (max-width: 900px) {
+    .info-form__list {
+        padding: 0;
+    }
     .info-form__fact {
         font-size: var(--font-paragraph-mobile);
         padding: 0;
@@ -191,6 +215,10 @@ body {
     padding: var(--spacing-20);
 }
 
+.info-form__form--text-input:invalid {
+    background-color: hsl(4, 100%, 95%);
+}
+
 .info-form__form--text-input:hover {
     cursor: pointer;
 }
@@ -210,14 +238,32 @@ body {
     transition: background-image .25s; */
 }
 
+.dismiss-button {
+    margin-top: var(--spacing-12);
+    padding: var(--spacing-20);
+    font-size: var(--font-paragraph);
+    font-weight: 700;
+    max-width: var(--spacing-percentage-90);
+    min-width: var(--spacing-300);
+    background-color: var(--neutral-dark-slate-grey);
+    color: var(--neutral-white);
+    border: 1px solid var(--neutral-grey);
+    border-radius: 10px;
+}
+
 .submit-button:hover {
     cursor: pointer;
-    /* background-color: var(--primary-tomato);  */
+    background-image: linear-gradient(to right, red, var(--primary-tomato));
+}
+
+.dismiss-button:hover {
+    cursor: pointer;
     background-image: linear-gradient(to right, red, var(--primary-tomato));
 }
 
 @media screen and (max-width: 900px) {
-    .submit-button {
+    .submit-button,
+    .dismiss-button {
         font-size: var(--font-paragraph-mobile);
         /* max-width: var(--spacing-percentage-90); */
         min-width: 220px;
@@ -262,7 +308,7 @@ body {
 /* Ventana modal (agregar lista de tarea) */
 
 .bg-modal {
-    display: grid;
+    display: none;
     place-items: center;
     position: fixed;
     z-index: 101;
